@@ -5,8 +5,8 @@ let weather = {
     
     getData: async function() {
 
-        let rnd1 = parseInt(Math.random() * 10);
-        let rnd2 = parseInt(Math.random() * 10);
+        let rnd1 = Math.floor(Math.random() * 10);
+        let rnd2 = Math.floor(Math.random() * 10);
         nocacheURL = 'https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=58.34' + rnd1 + '&lon=8.52' + rnd2 + '&altitude=6';
 
         try {
@@ -30,8 +30,6 @@ function parse(data) {
     let t1 = data.properties.timeseries[2]; // + 2 timer
     let t2 = data.properties.timeseries[6]; // + 6 timer
     let t3 = data.properties.timeseries[10]; // + 10 timer
-
-    console.log("log: ", t1);
 
     return [
         {

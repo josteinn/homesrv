@@ -12,7 +12,7 @@ app.use('/', express.static('client')); //for serving client files
 // endpoint GET ----------------------------------
 app.get('/chunk/:num', async function (req, res) {    
     
-    console.log("request: " + new Date().toLocaleTimeString());
+    console.log("request: " + new Date().toString());
     
     chunkNum = req.params["num"];
     let weatherData = await weather.getData();
