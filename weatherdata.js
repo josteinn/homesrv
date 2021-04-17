@@ -27,6 +27,8 @@ function parse(data) {
     let t2 = data.properties.timeseries[6]; // + 6 timer
     let t3 = data.properties.timeseries[10]; // + 10 timer
 
+    console.log("log: ", t1);
+
     return [
         {
             time: new Date(t1.time).toTimeString().substr(0, 2), 
