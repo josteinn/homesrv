@@ -30,6 +30,6 @@ app.get('/chunk/:num', async function (req, res) {
 
 // start server -----------------------------------
 var port = process.env.PORT || 80;
-app.listen(port, '192.168.0.164', function () {
+app.listen(port, '192.168.0.121', function () {
     console.log('Server listening on port 80!');
 });
