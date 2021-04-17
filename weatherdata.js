@@ -5,8 +5,12 @@ let weather = {
     
     getData: async function() {
 
+        let rnd1 = parseInt(Math.random() * 10);
+        let rnd2 = parseInt(Math.random() * 10);
+        nocacheURL = 'https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=58.34' + rnd1 + '&lon=8.52' + rnd2 + '&altitude=6';
+
         try {
-            const response = await got('https://api.met.no/weatherapi/locationforecast/2.0/compact?lat=58.34&lon=8.5225&altitude=6', {responseType: "json"}); //landvik målestasjon
+            const response = await got(nocacheURL, {responseType: "json"}); //landvik målestasjon
 
             if (response.statusCode == 200) {
                 return parse(response.body);
